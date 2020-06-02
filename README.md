@@ -17,6 +17,7 @@ Hopefully someday I’ll get around to cleaning this project up and making a nic
 To use this project, the main file to look at is Emulator.cpp, the first line of main is 
 ```cpp 
 vector<string> files = {"asm/header.asm", "asm/print.asm","asm/graphics.asm", "asm/gt.asm"};
+```
 These are the MIPS assembly files that will be assembled, linked, and run on the emulator. If you have any MIPS code you would like to run, you can put it here, But please note again, This project leaves out many of the instructions and should not be used for anything other than a proof of concept. 
 
 ##Notes
