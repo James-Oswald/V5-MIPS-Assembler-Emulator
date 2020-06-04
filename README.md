@@ -21,5 +21,20 @@ vector<string> files = {"asm/header.asm", "asm/print.asm","asm/graphics.asm", "a
 These are the MIPS assembly files that will be assembled, linked, and run on the emulator. If you have any MIPS code you would like to run, you can put it here, But please note again, This project leaves out many of the instructions and should not be used for anything other than a proof of concept. 
 
 ## Notes
-I added a few custom syscalls for things like setting pixel colors so I would be able to create some graphics programs, everything else conforms to the MARS / SPIM syscall standards, and my custom syscalls were added in syscall slots that aren’t used by either of the other emulators.
+I added a few custom syscalls for things like setting pixel colors so I would be able to create some graphics programs, everything else conforms to the MARS / SPIM syscall standards, and my custom syscalls were added in syscall slots that aren’t used by either of the other emulators, with the exception to syscall 17 which I decided to remove since an an "exit2" wasn't necesary.
+
+Normal syscalls:
+https://courses.missouristate.edu/KenVollmar/MARS/Help/SyscallHelp.html
+
+Custom syscalls:
+|$v0      | syscall  | Notes                                                      |
+|---------|----------|------------------------------------------------------------|
+|17       | setPixel | $a0 = screen x pos , $a1 = y screen y pos $a2 = rgba color |
+|---------|----------|------------------------------------------------------------|
+|18       | display  | updates the java display*                                  |
+|---------|----------|------------------------------------------------------------|
+|19       | pause    | calls `system("pause")` pasuing the program                |
+
+\* the current version of this program updates display after every instruction is exectuted, making this syscall useless. However to change that just comment out line 165 of Emulator.cpp, `display()`. 
+
 
