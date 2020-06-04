@@ -30,9 +30,7 @@ Custom syscalls:
 |$v0      | syscall  | Notes                                                      |
 |---------|----------|------------------------------------------------------------|
 |17       | setPixel | $a0 = screen x pos , $a1 = y screen y pos $a2 = rgba color |
-|---------|----------|------------------------------------------------------------|
 |18       | display  | updates the java display*                                  |
-|---------|----------|------------------------------------------------------------|
 |19       | pause    | calls `system("pause")` pasuing the program                |
 
 \* the current version of this program updates display after every instruction is exectuted, making this syscall useless. However to change that just comment out line 165 of Emulator.cpp, `display()`. 
