@@ -33,6 +33,6 @@ Custom syscalls:
 |18       | display  | updates the java display*                                  |
 |19       | pause    | calls `system("pause")` pasuing the program                |
 
-\* the current version of this program updates display after every instruction is exectuted, making this syscall useless. However to change that just comment out line 165 of Emulator.cpp, `display()`. 
+\* The current version of this program updates display after every instruction is exectuted, making this syscall useless. However to change that just comment out line 196 of Emulator.cpp, `display()`. 
 
 
